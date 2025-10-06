@@ -1,0 +1,21 @@
+{
+  "name": "selenium-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "selenium-webdriver": "^4.36.0",
+    "winston": "^3.18.3"
+  },
+  "devDependencies": {
+    "geckodriver": "^6.0.2"
+  }
+}
