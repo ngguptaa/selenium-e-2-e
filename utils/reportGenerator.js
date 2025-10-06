@@ -10,7 +10,7 @@ async function generateExcelReport(testData) {
     { header: 'Test Case', key: 'testCase', width: 35 },
     { header: 'Execution Time (s)', key: 'time', width: 20 },
     { header: 'Total Clicks', key: 'clicks', width: 15 },
-    { header: 'Status', key: 'status', width: 10 }
+    { header: 'Status', key: 'status', width: 90 }
   ];
 
   testData.forEach(row => sheet.addRow(row));
