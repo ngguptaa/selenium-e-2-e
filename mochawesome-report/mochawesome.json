@@ -1,0 +1,234 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-06T13:21:50.371Z",
+    "end": "2025-10-06T13:22:45.949Z",
+    "duration": 55578,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5a8052a6-ffd0-4c37-8852-17a95f5c4563",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [
+        {
+          "title": "\"after all\" hook in \"{root}\"",
+          "fullTitle": "\"after all\" hook in \"{root}\"",
+          "timedOut": false,
+          "duration": 1,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "const allResults = getTestResults();\nif (allResults.length > 0) {\n  await generateExcelReport(allResults); // ✅ Combined Excel report\n  console.log('✅ All modules report generated in one Excel file');\n} else {\n  console.log('⚠️ No test results found. Please ensure each test adds results using addTestResult().');\n}\nresetTestResults();",
+          "err": {},
+          "uuid": "12285b66-5d29-472f-a568-82b37ded974f",
+          "parentUUID": "5a8052a6-ffd0-4c37-8852-17a95f5c4563",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4ca4e44b-bef1-48c1-9d0f-0d6b6000a71e",
+          "title": "Login Module",
+          "fullFile": "C:\\Users\\jayka\\Downloads\\seleniumAutomation\\Acumen\\selenium-e-2-e\\tests\\allModules.test.js",
+          "file": "\\tests\\allModules.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Login Module\"",
+              "fullTitle": "Login Module \"before all\" hook in \"Login Module\"",
+              "timedOut": false,
+              "duration": 1765,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await getDriver();\nawait driver.get('http://localhost:3000/login');",
+              "err": {},
+              "uuid": "c9c04f8e-7d5f-470f-88a2-70776dc88c81",
+              "parentUUID": "4ca4e44b-bef1-48c1-9d0f-0d6b6000a71e",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Login Module\"",
+              "fullTitle": "Login Module \"after all\" hook in \"Login Module\"",
+              "timedOut": false,
+              "duration": 183,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Steps ko report me string ki form me add karenge\nconst duration = timer.stop();\ntestResults.push({\n  module: 'Login',\n  testCase: 'Login with valid credentials',\n  time: duration,\n  clicks: clickCount,\n  steps: steps.join(' -> '), // ✅ Add steps\n  status: 'Pass'\n});\nawait generateExcelReport(testResults);\nif (driver) await driver.quit();",
+              "err": {},
+              "uuid": "fd11a14d-ea79-4ee1-affe-85ccd640eebf",
+              "parentUUID": "4ca4e44b-bef1-48c1-9d0f-0d6b6000a71e",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should login with valid credentials",
+              "fullTitle": "Login Module should login with valid credentials",
+              "timedOut": false,
+              "duration": 19633,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "timer.start();\nconst emailInput = await driver.findElement(By.id('loginEmail'), 5000);\nawait emailInput.sendKeys('student-acumen@yopmail.com');\nsteps.push('Email Entered'); // ✅ Step record\nconst loginBtn = await driver.findElement(By.id('loginBtn'));\nawait loginBtn.click();\nclickCount++;\nsteps.push('Login Button Clicked'); // ✅ Step record\nawait driver.sleep(7000);\nconst otpInput = await driver.findElement(By.xpath('//*[@id=\"app\"]/main/div/div/div/div/div/form/div[3]/div/div[2]/input'));\nawait otpInput.sendKeys('123456');\nsteps.push('OTP Entered'); // ✅ Step record\nawait driver.sleep(3000);\nconst verifyBtn = await driver.findElement(By.xpath('//*[@id=\"app\"]/main/div/div/div/div/div/form/button'));\nawait verifyBtn.click();\nclickCount++;\nsteps.push('Verify Button Clicked'); // ✅ Step record\nawait driver.sleep(7000);",
+              "err": {},
+              "uuid": "eadd8003-6214-4e1d-bcb5-2e2edd1857b4",
+              "parentUUID": "4ca4e44b-bef1-48c1-9d0f-0d6b6000a71e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "eadd8003-6214-4e1d-bcb5-2e2edd1857b4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19633,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        },
+        {
+          "uuid": "7a54d9eb-0e61-4398-bf32-1e2ec124c78e",
+          "title": "Dashboard Module",
+          "fullFile": "C:\\Users\\jayka\\Downloads\\seleniumAutomation\\Acumen\\selenium-e-2-e\\tests\\allModules.test.js",
+          "file": "\\tests\\allModules.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Dashboard Module\"",
+              "fullTitle": "Dashboard Module \"before all\" hook in \"Dashboard Module\"",
+              "timedOut": false,
+              "duration": 1610,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await getDriver();\nawait driver.get(\"http://localhost:3000/login\");",
+              "err": {},
+              "uuid": "f3a6a50a-cfe2-4d9a-b2ac-3d2bdabd94ef",
+              "parentUUID": "7a54d9eb-0e61-4398-bf32-1e2ec124c78e",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Dashboard Module\"",
+              "fullTitle": "Dashboard Module \"after all\" hook in \"Dashboard Module\"",
+              "timedOut": false,
+              "duration": 810,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await generateExcelReport(testResults);\nif (driver) await driver.quit();",
+              "err": {},
+              "uuid": "9a34ac1d-6075-430e-920a-62771888cce9",
+              "parentUUID": "7a54d9eb-0e61-4398-bf32-1e2ec124c78e",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should login and verify dashboard",
+              "fullTitle": "Dashboard Module should login and verify dashboard",
+              "timedOut": false,
+              "duration": 31556,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let clickCountObj = { count: 0 };\nlet steps = [];\nconst timer = new Timer();\ntimer.start();\n// ===== OPTIONAL LOGIN =====\n// Jab chaaho login run karna hai, tab uncomment karo\nawait login(driver, \"student-acumen@yopmail.com\", \"123456\", clickCountObj, steps);\n// ===== DASHBOARD =====\n  await driver.sleep(3000);\nasync function performStep(stepName, action) {\n  const stepTimer = new Timer();\n  stepTimer.start();\n  try {\n    await action();\n    const duration = stepTimer.stop();\n    testResults.push({\n      module: \"Dashboard\",\n      testCase: stepName,\n      time: duration,\n      clicks: clickCountObj.count,\n      steps: stepName,\n      status: \"Pass\",\n    });\n  } catch (err) {\n    const duration = stepTimer.stop();\n    testResults.push({\n      module: \"Dashboard\",\n      testCase: stepName,\n      time: duration,\n      clicks: clickCountObj.count,\n      steps: stepName + \" | Error: \" + err.message,\n      status: \"Fail\",\n    });\n    throw err;\n  }\n}\n// ===== Dashboard verification =====\nawait driver.sleep(3000);\nawait performStep(\"Dashboard Verified\", async () => {\n  const dashboardHeader = await driver.wait(\n    until.elementLocated(\n      By.xpath('//*[@id=\"app\"]/main/div/div/div[1]/div[2]/div/div[2]/div/ul/li[1]/a/button')\n    ),\n    50000\n  );\n  const visible = await dashboardHeader.isDisplayed();\n  expect(visible).to.be.true;\n});\nawait driver.sleep(3000);\n// ===== Profile icon click =====\nawait performStep(\"Profile Icon Clicked\", async () => {\n  const profileIcon = await driver.findElement(\n    By.xpath('//*[@id=\"app\"]/main/div/div/div[2]/main/div[1]/div[1]/div/div[2]/a[1]/img')\n  );\n  await profileIcon.click();\n  clickCountObj.count++;\n});\nawait driver.sleep(3000);\nawait performStep(\"Navigated back to previous page\", async () => {\n  await driver.navigate().back();\n});\nawait driver.sleep(3000);\n// ===== Notification icon click =====\nawait performStep(\"Notification Icon Clicked\", async () => {\n  const notificationIcon = await driver.findElement(\n    By.xpath('//*[@id=\"app\"]/main/div/div/div[2]/main/div[1]/div[1]/div/div[2]/a[2]')\n  );\n  await notificationIcon.click();\n  clickCountObj.count++;\n});\nawait driver.sleep(3000);\nawait performStep(\"Navigated back to previous page\", async () => {\n  await driver.navigate().back();\n});\nawait driver.sleep(3000);\ntimer.stop();",
+              "err": {},
+              "uuid": "e737e98e-abf5-4fba-987a-023cf4b3267d",
+              "parentUUID": "7a54d9eb-0e61-4398-bf32-1e2ec124c78e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e737e98e-abf5-4fba-987a-023cf4b3267d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31556,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 180000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.0"
+    }
+  }
+}
