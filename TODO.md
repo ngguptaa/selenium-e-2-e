@@ -1,0 +1,10 @@
+- [x] Create tests/pages/ directory
+- [x] Create tests/specs/ directory
+- [x] Create tests/reports/ directory
+- [x] Move tests/modules/ to tests/specs/
+- [x] Create tests/utils/logger.js using winston to log to tests/reports/test-results.txt
+- [x] Update imports in test files to use new logger path
+- [x] Modify main.js for conditional testing: run login, if success, run other tests
+- [x] Update main.js to log overall success/failure to text file
+- [x] Add try-catch and logging to signup.js
+- [x] Remove empty tests/modules/ directory
